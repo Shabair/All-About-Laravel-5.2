@@ -68,6 +68,16 @@ Route::get('checkroutename2',function(){
 Route::get('nameviaas',[
     'as' => 'routename3', //give the url name
     'uses' => 'AdminController@index2' //target the controller
+    /* insted of uses we can use clouser function directly like 
+    
+        Route::get('nameviaas',[
+                'as' => 'routename3',
+                function(){
+                    echo 'in the function';
+                }
+            ]);
+    
+    */
 ]);
 
 Route::get('checknameviaas',function(){
