@@ -102,3 +102,15 @@ Route::group(['middleware'=>'web'],function(){
     });
 
 });
+
+// add prefix for group
+//this is because whenever you call the get from a specific group then 
+//add prefix in route() before name of that get function
+Route::group(['middleware'=>'web','as'=>'admin-'],function(){
+
+    Route::get('use_prefix_for_group',function(){
+        echo route('admin-dashboard');
+    })->name('dashboard');
+
+});
+
