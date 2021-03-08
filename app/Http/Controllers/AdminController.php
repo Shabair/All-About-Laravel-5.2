@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 class AdminController extends Controller
 {
 
-    function index(){
-        echo 'In the admin Class and index function';
+    function index($num){
+        echo 'In the admin Class and index function :'.$num;
     }
 
     
