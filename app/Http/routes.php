@@ -48,6 +48,12 @@ Route::post('PostData','AdminController@postmethod');
 
 */
 
+//any type of request (post, get, put,patch)
+//http://localhost/lara/public/any_check
+Route::any('any_check',function(){
+    echo 'in any route';
+});
+
 //Check Url Function
 Route::get('checkurl',function(){
     echo url('admin',[125]);
