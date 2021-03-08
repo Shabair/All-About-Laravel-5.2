@@ -38,6 +38,16 @@ Route::get('regex/{name}/{age?}',function($name,$age=''){
 //post a data
 Route::post('PostData','AdminController@postmethod');
 
+//all other type of requests
+/*  
+    Route::post();
+    Route::delete();
+    Route::put();
+    Route::patch();
+    Route::any();
+
+*/
+
 //Check Url Function
 Route::get('checkurl',function(){
     echo url('admin',[125]);
