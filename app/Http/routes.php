@@ -21,5 +21,10 @@ Route::get('/admin/','AdminController@index');
 
 Route::get('/admin/{number}/{second?}','AdminController@index');
 
+Route::get('oppara/{name}/{age?}',function($name,$age=''){
+    echo "Name is: ".$name."<br />";
+    echo "Age is: ".$age;
+
+});
 
 Route::post('PostData','AdminController@postmethod');
