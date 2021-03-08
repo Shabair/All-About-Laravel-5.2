@@ -53,3 +53,13 @@ Route::get('regex2/check/{name}/{age?}',function($name,$age=''){
 Route::get('checkroutename',function(){
     echo route('rg',['shaib',125]);
 });
+
+//Give a name to a route and pass random values
+Route::get('regex3/check/',function(){
+    echo 'Url is Working';
+})->name('rg2');
+
+Route::get('checkroutename2',function(){
+    echo route('rg2',['sortby'=>'name','shaib',125]);
+    //this will add ? before parameter and get parameters
+});
