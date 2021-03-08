@@ -257,7 +257,7 @@ Route::get('getviewwithdata',function(){
 
 
 
-//**************************************************************remove public from url*******************************************************************************************
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^remove public from url^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 /*
 move the .htaccess file from the public folder to main directory of the project and rename the serve.php to index.php located in the main directory of laravel project.
@@ -265,3 +265,52 @@ so you can access project with out public in the url.
 for this must consider that apache rewrite_mode enable
 
 */
+
+
+//**************************************************************all about public remove from url*******************************************************************************************
+//**************************************************************all about public remove from url*******************************************************************************************
+//**************************************************************all about public remove from url*******************************************************************************************
+//**************************************************************all about public remove from url*******************************************************************************************
+//**************************************************************all about public remove from url*******************************************************************************************
+
+
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^all about middlewares start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/*
+    you can create middleware via command line or mannualy .
+    via command line paste this code "opened in the project directory" in cmd ( php artisan make:middleware middlewareName )
+    e.g php artisan make:middleware testingmiddleware
+    after creating and before using middleware first register in kernal.php located in app/http/kernal.php 
+*/
+
+
+//hit this url http://localhost/lara/testingmiddleware
+Route::get('testingmiddleware',function(){
+    echo 'testingmiddleware closure function';
+})->middleware('testingmiddleware');
+
+/*
+    or you can pass an array of middleware if there are more than one middlewares
+    e.g ->middleware(['web,'testingmiddleware']);
+    another example of middlewaren use
+
+    Route::get('testingmiddleware',[
+        'middleware' => 'testingmiddleware',
+        function(){
+            echo 'testingmiddleware closure function';
+        }
+    ]);
+
+
+*/
+
+
+
+
+
+
+
+
+
+
