@@ -20,7 +20,7 @@
     "php artisan"
     you can see all command listed there. now run isan route:list
     to check all route defined ithe the route folder
-
+    you can check all types of url or requests via php artisan route:list
 --------------------------------------------------------------------------
 */
 
@@ -181,3 +181,16 @@ Route::group(['prefix'=>'people'],function(){
     });
 
 });
+
+
+//if we dont want to define routes for any controller then we can do this.
+/* 
+then you define method in the controller like this (function (request type)(with capital letter method name)(){}) e.g function getAddUser 
+the url will be http://localhost/lara/public/with_out_routes/add-user
+each capital letter seperate via "-"
+you can check all urls via php artisan route:list
+http://localhost/lara/public/with_out_routes/add-user-with-the-restrictions
+http://localhost/lara/public/with_out_routes/add-user
+
+*/
+Route::controller('with_out_routes','WOR_Controller');
