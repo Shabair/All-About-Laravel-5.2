@@ -126,3 +126,22 @@ Route::group(['prefix'=>'user'],function(){
     })->name('dashboard2');
 
 });
+
+
+//nested route group
+
+Route::group(['prefix'=>'people'],function(){
+    Route::group(['prefix'=>'subscribers'],function(){
+        //new url will be http://localhost/lara/public/people/subscribers/add
+        Route::get('add',function(){
+            echo 'add subscribers';
+        });
+
+        //new url will be http://localhost/lara/public/people/subscribers/delete    
+        Route::get('delete',function(){
+            echo 'delete subscribers';
+        });
+
+    });
+
+});
