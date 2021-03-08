@@ -214,11 +214,54 @@ Route::controller('with_out_routes','WOR_Controller');
 //**************************************************************all about Routes End*******************************************************************************************all about Routes End
 //**************************************************************all about Routes End*******************************************************************************************all about Routes End
 
+
+
 //**************************************************************all about view Start*******************************************************************************************
 
 // hit this url http://localhost/lara/public/getview
 Route::get('getview',function(){
-    return view('test-data');
+    return view('test-view');
 });
 
+// pass data in view and hit this url http://localhost/lara/public/getviewwithdata
+Route::get('getviewwithdata',function(){
+    $data = [
+        'ali',
+        'shahid',
+        'kamran'
+    ];
+    $name = 'Shabair';
+    $age = 26;
+    //compact is php function and make array of each passing parameters
+    return view('test-data',compact('data','name','age'));
 
+    // or we can do
+    return view('test-data',['data'=>$data,'name'=>$name,'age'=>$age]);
+
+    // or we can do with "with" method
+    return view('test-data')->with('data',$data)->with('name',$name)->with('age',$age);
+
+    // or we can do with "with" method
+    return view('test-data')->with(['data'=>$data,'name'=>$name,'age'=>$age]);
+
+    //or we can pass data via dynamic methods (in this method you have to capital of first letter of varible used in view )
+    return view('test-data')->withData($data)->withName($name)->withAge($age);
+});
+
+//**************************************************************all about View End*******************************************************************************************
+//**************************************************************all about View End*******************************************************************************************
+//**************************************************************all about View End*******************************************************************************************
+//**************************************************************all about View End*******************************************************************************************
+//**************************************************************all about View End*******************************************************************************************
+
+
+
+
+//**************************************************************remove public from url*******************************************************************************************
+
+/*
+move the .htaccess file from the public folder to main directory of the project and rename the serve.php to index.php located in the main directory of laravel project.
+so you can access project with out public in the url.
+for this must consider that apache rewrite_mode enable
+
+*/
