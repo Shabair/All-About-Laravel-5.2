@@ -59,6 +59,7 @@ Route::post('PostData','AdminController@postmethod');
     Route::patch();
     Route::any();
     Route::match();
+    Route::controller();
 
 */
 
@@ -304,6 +305,24 @@ Route::get('testingmiddleware',function(){
 
 
 */
+
+//applt middleware on route:controller
+
+Route::controller('with_out_routes_plus_middleware','WORPM_Controller');
+
+//you can also see different methods to use middleware in a controller
+
+
+//**************************************************************all about middle url End*******************************************************************************************
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^all about dependency injection^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+//hit this url http://localhost/lara/dependency-check
+//get the testingmodel.php object in dependencycheck.php controller
+Route::get('dependency-check','dependencyCheck@dashboard');
+
+//**************************************************************end of dependency check*******************************************************************************************
+
 
 
 

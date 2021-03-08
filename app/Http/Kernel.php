@@ -51,5 +51,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'testingmiddleware' => \App\Http\Middleware\testmiddleware::class,
+        'WORPM_middleware_shortName' => \App\Http\Middleware\WORPM_middleware::class,
     ];
 }
