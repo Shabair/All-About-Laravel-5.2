@@ -63,3 +63,14 @@ Route::get('checkroutename2',function(){
     echo route('rg2',['sortby'=>'name','shaib',125]);
     //this will add ? before parameter and get parameters
 });
+
+//give route name via as
+Route::get('nameviaas',[
+    'as' => 'routename3', //give the url name
+    'uses' => 'AdminController@index2' //target the controller
+]);
+
+Route::get('checknameviaas',function(){
+    echo route('routename3');
+    //this will add ? before parameter and get parameters
+});

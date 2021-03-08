@@ -10,6 +10,10 @@ class AdminController extends Controller
     }
 
     
+    function index2(){
+        echo 'In the admin Class and index function index2';
+    }
+    
     function postmethod(){
         echo 'get post data here';
     }
