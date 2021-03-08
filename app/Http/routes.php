@@ -92,3 +92,13 @@ Route::get('middlewareonur1',[
     'middleware' => 'web'
 
 ]);
+
+//Apply Middleware on multiple urls via Route::group
+// this is because if we want to apply authentications etc
+Route::group(['middleware'=>'web'],function(){
+
+    Route::get('middleware_in_route_group',function(){
+        echo 'Middleware in route group Thanks';
+    });
+
+});
