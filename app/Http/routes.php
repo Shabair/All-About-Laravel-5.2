@@ -182,6 +182,17 @@ Route::group(['prefix'=>'people'],function(){
 
 });
 
+//sub domain concept if we create sub-domains like ali.example.com shabair.example.com
+//this will pass ali and shabair as first parameter to the method
+Route::group(['domain'=>'{domain}'],function(){
+
+        //new url will be http:shabair.example.com/checksubdomain
+        //this will run checksubdomain controller's method dashboard
+        Route::get('checksubdomain','checksubdomain@dashboard');
+
+});
+
+
 
 //if we dont want to define routes for any controller then we can do this.
 /* 
@@ -194,3 +205,4 @@ http://localhost/lara/public/with_out_routes/add-user
 
 */
 Route::controller('with_out_routes','WOR_Controller');
+
