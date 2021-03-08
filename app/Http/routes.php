@@ -45,6 +45,7 @@ Route::post('PostData','AdminController@postmethod');
     Route::put();
     Route::patch();
     Route::any();
+    Route::match();
 
 */
 
@@ -52,6 +53,12 @@ Route::post('PostData','AdminController@postmethod');
 //http://localhost/lara/public/any_check
 Route::any('any_check',function(){
     echo 'in any route';
+});
+
+//match the specific type of route request outof (post, get, put,patch etc)
+//http://localhost/lara/public/match_check
+Route::match(['get','post'],'match_check',function(){
+    echo 'in match route';
 });
 
 //Check Url Function
