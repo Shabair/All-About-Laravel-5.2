@@ -84,3 +84,11 @@ Route::get('checknameviaas',function(){
     echo route('routename3');
     //this will add ? before parameter and get parameters
 });
+
+//Apply Middleware on single url
+Route::get('middlewareonur1',[
+    'as' => 'middlewareonur_namel',
+    'uses' => 'AdminController@index2',
+    'middleware' => 'web'
+
+]);
