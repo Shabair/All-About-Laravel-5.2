@@ -18,13 +18,22 @@ Route::get('/', function () {
 
 Route::get('/admin/','AdminController@index');
 
-
+//multi paramters to controller and admin
 Route::get('/admin/{number}/{second?}','AdminController@index');
 
+//Passing optional parameter to clouser function
 Route::get('oppara/{name}/{age?}',function($name,$age=''){
     echo "Name is: ".$name."<br />";
     echo "Age is: ".$age;
 
 });
 
+//regular expression on url, a check point
+Route::get('regex/{name}/{age?}',function($name,$age=''){
+    echo "Name is: ".$name."<br />";
+    echo "Age is: ".$age;
+
+})->where(['age'=>'[0-9]+','name'=>'^[A-Za-z]+$']);
+
+//post a data
 Route::post('PostData','AdminController@postmethod');
