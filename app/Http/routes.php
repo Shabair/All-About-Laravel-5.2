@@ -327,9 +327,9 @@ Route::get('dependency-check','dependencyCheck@dashboard');
 
 
 
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^all about view^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-
-
-
+//hit this url http://localhost/lara/testing-view
+Route::get('testing-view','testingview@index');
 
