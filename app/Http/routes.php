@@ -42,3 +42,14 @@ Route::post('PostData','AdminController@postmethod');
 Route::get('checkurl',function(){
     echo url('admin',[125]);
 });
+
+//Give a name to a route
+Route::get('regex2/check/{name}/{age?}',function($name,$age=''){
+    echo "Name is: ".$name."<br />";
+    echo "Age is: ".$age;
+
+})->where(['age'=>'[0-9]+','name'=>'^[A-Za-z]+$'])->name('rg');
+
+Route::get('checkroutename',function(){
+    echo route('rg',['shaib',125]);
+});
