@@ -11,6 +11,19 @@
 |
 */
 
+
+
+/*
+--------------------------------------------------------------------------
+ Check thye artisan command in the cmd, with this we can generate may files like controllers, middlewares etc
+    run this command
+    "php artisan"
+    you can see all command listed there. now run isan route:list
+    to check all route defined ithe the route folder
+
+--------------------------------------------------------------------------
+*/
+
 Route::get('/', function () {
     return view('welcome');
 });
