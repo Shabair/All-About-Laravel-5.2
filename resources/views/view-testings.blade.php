@@ -18,5 +18,12 @@
 
 {!! $html !!}
 <!-- output with html result ( This is the HTML )-->
+
+
+@{{ $html }}
+<!-- if we dont use blade templateand output ( {{ $html }} )-->
+
+{{$html or "Var is not set"}}
+<!-- instead of isset($html)? $html:"Var is not set" -->
 @endsection
 <?php //or use @stop instead of @section ?>
