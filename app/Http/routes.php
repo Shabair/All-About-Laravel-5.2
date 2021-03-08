@@ -103,14 +103,26 @@ Route::group(['middleware'=>'web'],function(){
 
 });
 
-// add prefix for group
+// add prefix for group to prefix route name
 //this is because whenever you call the get from a specific group then 
 //add prefix in route() before name of that get function
 Route::group(['middleware'=>'web','as'=>'admin-'],function(){
 
     Route::get('use_prefix_for_group',function(){
-        echo route('admin-dashboard');
-    })->name('dashboard');
+        echo route('admin-dashboard1');
+        //http://localhost/lara/public/use_prefix_for_group
+    })->name('dashboard1');
 
 });
 
+// add prefix url in group
+//add prefix brfore url
+//new url will be http://localhost/lara/public/user/use_prefix_for_route
+Route::group(['prefix'=>'user'],function(){
+
+    Route::get('use_prefix_for_route',function(){
+        echo route('dashboard2');
+        //http://localhost/lara/public/user/use_prefix_for_route
+    })->name('dashboard2');
+
+});
