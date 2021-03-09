@@ -34,8 +34,31 @@ class customer extends Controller
         ]);
         $customer->save();
 
+        //another method to insert data
+        $customer = customer_model::create([
+            'name'=> 'shabair',
+            'address'=>'fateh garh',
+            'phone'=>'0000000000000'
+        ]);
+
         echo $customer->id;
 
         dd($customer);
+    }
+
+    function find(){
+        $customer = customer_model::find(20);
+        dd($customer->name);
+    }
+
+    function delete($id){
+        $customer = customer_model::find($id);
+        $customer->delete();
+        echo $id." has been delete";
+    }
+
+    function destroy($id){
+        customer_model::destroy($id);
+        echo $id." has been delete";
     }
 }

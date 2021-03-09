@@ -344,3 +344,6 @@ Route::get('test-each','testingview@test_each');
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Model Practice^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Route::get('customer','customer@index');
+Route::get('customer-find','customer@find');
+Route::get('customer-destroy/{id}','customer@destroy');
+Route::get('customer-delete/{id}','customer@destroy');
