@@ -15,11 +15,11 @@
 
 /*
 --------------------------------------------------------------------------
- Check thye artisan command in the cmd, with this we can generate may files like controllers, middlewares etc
+ Check the artisan command in the cmd, with this we can generate may files like controllers, middlewares etc
     run this command
     "php artisan"
     you can see all command listed there. now run isan route:list
-    to check all route defined ithe the route folder
+    to check all routes defined in the the route file
     you can check all types of url or requests via php artisan route:list
 --------------------------------------------------------------------------
 */
@@ -306,7 +306,7 @@ Route::get('testingmiddleware',function(){
 
 */
 
-//applt middleware on route:controller
+//apply middleware on route:controller
 
 Route::controller('with_out_routes_plus_middleware','WORPM_Controller');
 
@@ -333,3 +333,14 @@ Route::get('dependency-check','dependencyCheck@dashboard');
 //hit this url http://localhost/lara/testing-view
 Route::get('testing-view','testingview@index');
 
+
+//hit this url http://localhost/lara/override-view
+Route::get('override-view','testingview@override');
+
+//hit this url http://localhost/lara/test-each
+Route::get('test-each','testingview@test_each');
+
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Model Practice^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Route::get('customer','customer@index');

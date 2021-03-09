@@ -16,4 +16,17 @@ class testingview extends Controller
         return view('layout.master');
 
     }
+
+    function override(){
+        return view('child-view',['value_from_controller'=>'from-Controller']);
+    }
+
+    function test_each(){
+        $data = [
+            ['name'=>'Shabair'],
+            ['name'=>'Ali'],
+            ['name'=>'Shahid'],
+        ];
+        return view('each-testing')->withNames($data);
+    }
 }
