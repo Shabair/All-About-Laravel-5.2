@@ -25,13 +25,17 @@ class customer extends Controller
         //to use this you have add fillable or guarded properties into the model
         $customer = new customer_model([
             'name'=> 'shabair',
-            'address'=>'fateh garh',
-            'phone'=> '+923320872000'
+        ]);
+        // if we want to more item to add
+        $customer->phone = '+925464341684313';
+        // also its dont with the fill
+        $customer->fill([
+            'address'=>'fateh garh'
         ]);
         $customer->save();
 
+        echo $customer->id;
 
         dd($customer);
-        echo 'in the customer class and index';
     }
 }
