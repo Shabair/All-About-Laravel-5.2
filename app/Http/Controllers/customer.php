@@ -11,8 +11,16 @@ use App\customer as customer_model;
 class customer extends Controller
 {
     function index(){
-        $customers = customer_model::all();
-        dd($customers);
+
+        $faker = \Faker\Factory::create();
+
+        
+        $customer = new customer_model;
+        $customer->name = $faker->name();
+        $customer->address = $faker->state();
+        $customer->phone = $faker->phoneNumber();
+        $customer->save();
+        dd($customer);
         echo 'in the customer class and index';
     }
 }
